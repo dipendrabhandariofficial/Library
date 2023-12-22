@@ -1,0 +1,405 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+/*-------------------------------------------- Main CSS code now ----------------------------------------------*/
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+}
+header {
+  /* existing styles */
+  height: 130px;
+  background-image: url(images/background.jpg); /* Set initial background image */
+  background-size: cover;
+  background-position: center;
+ }
+
+header:hover {
+  background: black;
+   /* Set the background color to black on hover */
+  background-image: none;
+ 
+}
+
+section {
+  /* width: fit-content; */
+  /* height: fit-content; */
+  background-color: grey;
+}
+footer {
+  /* width: 1370px; */
+  height: 80px;
+  background-color: black;
+}
+.logo {
+  padding-left: 65px;
+  float: left;
+  padding-top: 20px;
+}
+.logo img {
+  padding-left: 50px;
+}
+li a {
+  text-decoration: none;
+  color: white;
+}
+nav {
+  float: right;
+  word-spacing: 30px;
+  padding: 20px;
+  padding-right: 40px;
+}
+nav li {
+  display: inline-block;
+  line-height: 80px;
+}
+nav li a:hover {
+  background: -webkit-linear-gradient(to right, #155799, #159957);
+  background: linear-gradient(to right, #155799, #159957);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+section .sec_img {
+  height: 703px;
+  background-image: url(images/background.jpg);
+  margin-top: 0px;
+}
+
+.box {
+  color: rgba(218, 245, 14, 0.967);
+  height: 300px;
+  width: 450px;
+  margin: 160px auto;
+}
+.line {
+  width: 400px;
+  height: 2px;
+  background: #d5ec0c;
+  position: absolute;
+  top: 340px;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  margin: 100px auto;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4dfb3d;
+  animation: moveLine 5s linear infinite;
+}
+
+@keyframes moveLine {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Add a style for the scrolled class */
+header.scrolled {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.8); /* Set the background color for the scrolled header */
+    transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Existing styles for the header */
+  header {
+    height: 130px;
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: background  cubic-bezier(0.4, 0, 0.2, 1);
+    
+    
+  }
+  
+  /* Additional styles for the footer */
+  footer {
+    height: 80px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the footer is above other content */
+  }
+  
+
+/* --------------------------------------student-login---------------------------------------------------- */
+
+.log_img {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: -webkit-linear-gradient(to right, #155799, #159957);
+  background: linear-gradient(to right, #155799, #159957);
+  color: whitesmoke;
+  height: fit-content;
+}
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 35rem;
+  margin: auto;
+  color: whitesmoke;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(11, 15, 13, 0.582);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 20px 25px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 15px 18px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #030804;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 5px;
+  margin: 7px 0;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.register {
+  color: white;
+  text-align: center;
+}
+
+.register a {
+  color: rgb(74, 146, 235);
+}
+
+.register a:link {
+  text-decoration: none;
+}
+.headingsContainer {
+  text-align: center;
+}
+
+.headingsContainer p {
+  color: gray;
+}
+.mainContainer {
+  padding: 16px;
+}
+
+.subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subcontainer a {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+span.forgotpsd a {
+  float: right;
+  color: whitesmoke;
+  padding-top: 16px;
+}
+
+.forgotpsd a {
+  color: rgb(74, 146, 235);
+}
+
+.forgotpsd a:link {
+  text-decoration: none;
+}
