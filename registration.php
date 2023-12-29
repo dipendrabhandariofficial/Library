@@ -1,4 +1,5 @@
 <?php
+include "connection.php";
 include "navbar.php";
 ?>
 <!DOCTYPE html>
@@ -16,35 +17,30 @@ include "navbar.php";
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <title>Registration</title>
+    <script type="text/javascript">
+        function setFormValues() 
+        {
+            // Set the form values
+            var form = document.getElementById("registrationForm");
+            form.elements["firstname"].value = '<?php echo isset($_POST["firstname"]) ? addslashes($_POST["firstname"]) : "" ?>';
+            form.elements["lastname"].value = '<?php echo isset($_POST["lastname"]) ? addslashes($_POST["lastname"]) : "" ?>';
+            form.elements["roll"].value = '<?php echo isset($_POST["roll"]) ? addslashes($_POST["roll"]) : "" ?>';
+            form.elements["phone"].value = '<?php echo isset($_POST["phone"]) ? addslashes($_POST["phone"]) : "" ?>';
+            form.elements["password"].value = '<?php echo isset($_POST["password"]) ? addslashes($_POST["password"]) : "" ?>';
+            form.elements["email"].value = '<?php echo isset($_POST["email"]) ? addslashes($_POST["email"]) : "" ?>';
+            
+        }           
+    </script>
     
     
 </head>
-<body>
-     <!-- <header style="background: black;">
-      <a href="index.php" id="logo-link">
-        <div class="logo">
-            <img src="images/logo" alt="image not found" height="90px" width="170px" />
-            <h1 style="color: white;">LIBRARY MANAGEMENT SYSTEM</h1>
-        </div>
-    </a>
-
-    <nav>
-        <ul>
-          <li><a href="index.php">HOME </a></li>
-          <li><a href="">BOOKS </i></a></li>
-          <li><a href="">FEEDBACK</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li><a href="student_login.php" style="font-size: small;">LOGIN</a></li>
-          <li><a href="student_login.php" style="font-size: small;" >LOGOUT</a></li>
-          <li><a href="registration.php" style="font-size: small;">SIGN-UP</a></li><br>
-        </ul>
-      </nav>
-</header> -->
-
+<body onload="setFormValues()" >
 <section>
     <div class="log_img"><br><br><br>
     <div class="box1">
       <h1 style="text-align: center; font-size: 25px;">User Registration </h1><br>
-      <form action="">
+      <form action="" method="post" id="registrationForm">
           <!-- Headings for the form -->
           <div class="headingsContainer">
               <h3>Register</h3><br>
@@ -53,32 +49,36 @@ include "navbar.php";
           <!-- Main container for all inputs -->
           <div class="mainContainer">
              <!-- firstname -->
-             <label for="Firstname"> First Name</label>
+             <label for="firstname"> First Name</label>
              <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" required>
 
               <!-- Lastname -->
-              <label for="Lastname"> Last Name</label>
-              <input type="text" placeholder="Enter Lastname" name="Lastname" required>
+              <label for="lastname"> Last Name</label>
+              <input type="text" placeholder="Enter Lastname" name="lastname" required>
 
               <!-- Username -->
               <label for="username"> User Name</label>
               <input type="text" placeholder="Enter Username" name="username" required>
       
               <!-- Password -->
-              <label for="pswrd">Password</label>
-              <input type="password" placeholder="Enter Password" name="pswrd" required>
+              <label for="password">Password</label>
+              <input type="password" placeholder="Enter Password" name="password" required>
               
                <!-- Roll -->
-               <label for="Rollno"> Roll No</label>
-               <input type="number" placeholder="Enter Rollno " name="Rollno" required>
+               <label for="roll"> Roll No</label>
+               <input type="number" placeholder="Enter Rollno " name="roll" required>
 
                 <!-- Email -->
               <label for="email"> Email</label>
               <input type="email" placeholder="Enter Email" name="email" required>
+
+               <!-- Phone -->
+               <label for="phone"> Phone</label>
+              <input type="number" placeholder="Enter Phone" name="phone" required>
   
   
               <!-- Submit button -->
-              <button type="submit">Register</button>
+              <button type="submit" name="submit">Register</button>
 
               <!-- Login -->
               <p class="register">Already a member?  <a href="student_login.php">Login Here!</a></p>
@@ -90,3 +90,48 @@ include "navbar.php";
     </div>
     </div>
 </section>
+
+<?php
+    if(isset($_POST['submit'])) {
+        $FN = $_POST['firstname'];
+        $LN = $_POST['lastname'];
+        $E = $_POST['email'];
+        $P = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
+        $UN = $_POST['username'];
+        $R = $_POST['roll'];
+        $Ph = $_POST['phone'];
+
+        // Ensure that the connection is established
+        if (!$connect) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        // Check if the username already exists
+        $checkSql = "SELECT * FROM `student` WHERE `username` = '$UN'";
+        $result = mysqli_query($connect, $checkSql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // Username already exists
+            echo '<script type="text/javascript">';
+            echo 'alert("Registration Failed: Username already exists.");';
+            echo 'setFormValues();'; // Call the function to set form values
+            echo 'form.elements["username"].focus()';
+            echo '</script>';
+        } else {
+            // Insert the new record
+            $insertSql = "INSERT INTO `student` VALUES ('$FN','$LN','$UN','$P','$R','$E','$Ph')";
+
+            if (mysqli_query($connect, $insertSql)) {
+                echo '<script type="text/javascript">alert("Registration Successful");</script>';
+            } else {
+                // Display a generic error message
+                echo '<script type="text/javascript">alert("Registration Failed. Please try again later.");</script>';
+            }
+        }
+
+        // Close the database connection
+        mysqli_close($connect);
+    }
+    ?>
+</body>
+</html>
