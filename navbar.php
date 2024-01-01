@@ -15,7 +15,7 @@
 </head>
 <body>
 <header  style="background: black;">
-  <a href="index.html" id="logo-link">
+  <a href="index.php" id="logo-link">
     <div class="logo">
         <img src="images/logo" alt="image not found" height="90px" width="170px" />
         <h1 style="color: white;">LIBRARY MANAGEMENT SYSTEM</h1>

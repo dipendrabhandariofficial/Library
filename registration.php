@@ -96,7 +96,7 @@ include "navbar.php";
         $FN = $_POST['firstname'];
         $LN = $_POST['lastname'];
         $E = $_POST['email'];
-        $P = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
+        $P = $_POST['password']; // Hash the password
         $UN = $_POST['username'];
         $R = $_POST['roll'];
         $Ph = $_POST['phone'];
@@ -120,17 +120,15 @@ include "navbar.php";
         } else {
             // Insert the new record
             $insertSql = "INSERT INTO `student` VALUES ('$FN','$LN','$UN','$P','$R','$E','$Ph')";
-
             if (mysqli_query($connect, $insertSql)) {
                 echo '<script type="text/javascript">alert("Registration Successful");</script>';
+                echo '<script> window.location.href = "student_login.php"; </script>';
             } else {
                 // Display a generic error message
                 echo '<script type="text/javascript">alert("Registration Failed. Please try again later.");</script>';
             }
         }
 
-        // Close the database connection
-        mysqli_close($connect);
     }
     ?>
 </body>
