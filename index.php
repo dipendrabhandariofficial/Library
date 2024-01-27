@@ -48,7 +48,7 @@
           <br /><div class="line"></div> 
           <h1 style="text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Open at 9:00 AM</h1>
           <br />
-          <h1 style="text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Closes at 4:00 PM</h1>
+          <h1 style="text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Closes at 4:30 PM</h1>
           <br />
         </div>
         </div>
