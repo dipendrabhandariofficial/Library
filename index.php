@@ -42,13 +42,13 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;">
-          <h1 style="text-align: center; font-size: 45px;">
+          <h1 style="text-align: center; font-size: 45px; color:#ff0">
             Welcome to Library
           </h1>
           <br /><div class="line"></div> 
-          <h1 style="text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Open at 9:00 AM</h1>
+          <h1 style="color:#ff0 ;text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Open at 9:00 AM</h1>
           <br />
-          <h1 style="text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Closes at 4:30 PM</h1>
+          <h1 style="color:#ff0;text-align: center; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Closes at 4:30 PM</h1>
           <br />
         </div>
         </div>

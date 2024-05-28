@@ -40,7 +40,7 @@ include "navbar.php";
     <div class="log_img"><br><br><br>
     <div class="box1">
       <h1 style="text-align: center; font-size: 25px;">User Registration </h1><br>
-      <form action="" method="post" id="registrationForm">
+      <form action="" method="get" id="registrationForm">
           <!-- Headings for the form -->
           <div class="headingsContainer">
               <h3>Register</h3><br>

@@ -43,11 +43,14 @@ include "navbar.php";
 
 // Create a SQL query to retrieve the data
 $sql = "SELECT * FROM `books` ORDER BY `books`.`name` ASC";
+// serial no 
+$i = 1;
+
 $result= mysqli_query($connect,$sql);
 ?>
 <table class="books-table">
     <tr>
-        <th>ID</th>
+        <th>S.N</th>
         <th>Name</th>
         <th>Authors</th>
         <th>Edition</th>
@@ -58,7 +61,7 @@ $result= mysqli_query($connect,$sql);
     <?php
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . "$i". "</td>";
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['authors'] . "</td>";
         echo "<td>" . $row['edition'] . "</td>";
@@ -67,7 +70,10 @@ $result= mysqli_query($connect,$sql);
         echo "<td>" . $row['department'] . "</td>";
 
         echo "</tr>";
+        $i++;
     }
+    //increase the value of serial no
+    
     ?>
 </table>
 

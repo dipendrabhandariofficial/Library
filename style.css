@@ -309,8 +309,8 @@ header.scrolled {
 
 .log_img {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: -webkit-linear-gradient(to right, #155799, #159957);
-  background: linear-gradient(to right, #155799, #159957);
+  background: -webkit-linear-gradient(to right, #155799, #ff0);
+  background: linear-gradient(to right, #155799, #ff07);
   color: whitesmoke;
   height: fit-content;
 }
