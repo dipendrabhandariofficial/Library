@@ -163,7 +163,7 @@ input,
 select {
   vertical-align: middle;
 }
-/*-------------------------------------------- Main CSS code now ----------------------------------------------*/
+/*-------------------------------------------- Main CSS code now ----------------------------------------*/
 
 .wrapper {
   width: 100%;
@@ -403,3 +403,5 @@ span.forgotpsd a {
 .forgotpsd a:link {
   text-decoration: none;
 }
+
+
