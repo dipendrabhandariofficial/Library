@@ -26,7 +26,7 @@
     <nav>
       <ul>
         <li><a href="index.php">HOME </a></li>
-        <li><a href="books.php">BOOKS </i></a></li>
+        <li><a href="books.php">BOOKSS </i></a></li>
         <li><a href="feedback.php">FEEDBACK</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li><a href="student_login.php" style="font-size: small;">LOGIN</a></li>
         <li><a href="student_login.php" style="font-size: small;" >LOGOUT</a></li>
